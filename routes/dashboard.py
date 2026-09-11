@@ -292,3 +292,184 @@ def watershed_dashboard(
             for a in timeline
         ]
     }
+@router.get("/combined")
+def combined_dashboard(db: Session = Depends(get_db)):
+
+    # Get the first available watershed
+    watershed = db.query(models.Watershed).first()
+
+    if not watershed:
+        return {
+            "message": "No watershed found"
+        }
+
+    # Get latest satellite analysis
+    latest_analysis = db.query(
+        models.SatelliteAnalysis
+    ).filter(
+        models.SatelliteAnalysis.watershed_id == watershed.id
+    ).order_by(
+        models.SatelliteAnalysis.analysis_date.desc()
+    ).first()
+
+    # Get latest change detection
+    latest_change = db.query(
+        models.ChangeDetection
+    ).filter(
+        models.ChangeDetection.watershed_id == watershed.id
+    ).order_by(
+        models.ChangeDetection.current_date.desc()
+    ).first()
+
+    # Get interventions
+    interventions = db.query(
+        models.Intervention
+    ).filter(
+        models.Intervention.watershed_id == watershed.id
+    ).all()
+
+    # Count images
+    image_count = db.query(
+        models.Image
+    ).filter(
+        models.Image.watershed_id == watershed.id
+    ).count()
+
+    # Calculate health score
+    health_score = None
+    health_rating = "No Data"
+
+    if latest_analysis:
+
+        ndvi_score = min(
+            max(latest_analysis.ndvi * 100, 0),
+            100
+        )
+
+        if latest_change:
+
+            water_score = min(
+                max(50 + latest_change.water_change * 2, 0),
+                100
+            )
+
+            land_score = min(
+                max(100 - abs(latest_change.land_change) * 2, 0),
+                100
+            )
+
+        else:
+            water_score = 50
+            land_score = 50
+
+        if interventions:
+
+            completed = sum(
+                1
+                for i in interventions
+                if i.status.lower() == "completed"
+            )
+
+            intervention_score = (
+                completed / len(interventions)
+            ) * 100
+
+        else:
+            intervention_score = 0
+
+        health_score = round(
+            ndvi_score * 0.40 +
+            water_score * 0.30 +
+            land_score * 0.20 +
+            intervention_score * 0.10
+        )
+
+        if health_score >= 80:
+            health_rating = "Excellent"
+        elif health_score >= 65:
+            health_rating = "Good"
+        elif health_score >= 50:
+            health_rating = "Moderate"
+        else:
+            health_rating = "Needs Attention"
+
+    return {
+
+        "watershed": {
+            "id": watershed.id,
+            "name": watershed.name,
+            "district": watershed.district,
+            "state": watershed.state,
+            "latitude": watershed.latitude,
+            "longitude": watershed.longitude,
+            "area": watershed.area
+        },
+
+        "health": {
+            "score": health_score,
+            "rating": health_rating
+        },
+
+        "latest_analysis": (
+            {
+                "date": str(latest_analysis.analysis_date),
+                "ndvi": latest_analysis.ndvi,
+                "water_area": latest_analysis.water_area,
+                "vegetation_area": latest_analysis.vegetation_area,
+                "soil_area": latest_analysis.soil_area
+            }
+            if latest_analysis else None
+        ),
+
+        "latest_change": (
+            {
+                "previous_date": str(
+                    latest_change.previous_date
+                ),
+                "current_date": str(
+                    latest_change.current_date
+                ),
+                "vegetation_change":
+                    latest_change.vegetation_change,
+                "water_change":
+                    latest_change.water_change,
+                "land_change":
+                    latest_change.land_change,
+                "change_percentage":
+                    latest_change.change_percentage
+            }
+            if latest_change else None
+        ),
+
+        "interventions": [
+            {
+                "id": i.id,
+                "type": i.type,
+                "status": i.status,
+                "latitude": i.latitude,
+                "longitude": i.longitude,
+                "date": str(i.date),
+                "description": i.description
+            }
+            for i in interventions
+        ],
+
+        "image_count": image_count,
+
+        "timeline": [
+            {
+                "date": str(a.analysis_date),
+                "ndvi": a.ndvi,
+                "water_area": a.water_area,
+                "vegetation_area": a.vegetation_area,
+                "soil_area": a.soil_area
+            }
+            for a in db.query(
+                models.SatelliteAnalysis
+            ).filter(
+                models.SatelliteAnalysis.watershed_id == watershed.id
+            ).order_by(
+                models.SatelliteAnalysis.analysis_date.asc()
+            ).all()
+        ]
+    }
