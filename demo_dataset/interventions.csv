@@ -1,0 +1,37 @@
+id,watershed_id,type,latitude,longitude,date,status,description,source
+1,1,Check Dam,23.336377,86.373912,2026-06-26,Completed,Check Dam intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+2,1,Contour Trench,23.338805,86.37126,2026-07-27,In Progress,Contour Trench intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+3,1,Percolation Tank,23.329465,86.355356,2026-08-27,Completed,Percolation Tank intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+4,2,Contour Trench,23.238015,87.065679,2026-06-27,In Progress,Contour Trench intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+5,2,Percolation Tank,23.230187,87.078184,2026-07-28,Completed,Percolation Tank intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+6,2,Afforestation,23.24748,87.071262,2026-08-28,Completed,Afforestation intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+7,3,Percolation Tank,22.460437,86.984875,2026-06-28,Completed,Percolation Tank intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+8,3,Afforestation,22.459214,86.992345,2026-07-29,Completed,Afforestation intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+9,3,Field Bunding,22.454457,86.995522,2026-08-29,Planned,Field Bunding intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+10,4,Afforestation,23.832436,87.622692,2026-06-29,Completed,Afforestation intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+11,4,Field Bunding,23.843725,87.618328,2026-07-30,Planned,Field Bunding intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+12,4,Farm Pond,23.831745,87.628382,2026-08-30,Completed,Farm Pond intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+13,5,Field Bunding,23.684374,87.238635,2026-06-30,Planned,Field Bunding intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+14,5,Farm Pond,23.685058,87.243441,2026-07-31,Completed,Farm Pond intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+15,5,Check Dam,23.688285,87.25267,2026-08-31,Completed,Check Dam intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+16,6,Farm Pond,23.500494,86.68615,2026-07-01,Completed,Farm Pond intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+17,6,Check Dam,23.498506,86.680984,2026-08-01,Completed,Check Dam intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+18,6,Contour Trench,23.500631,86.668787,2026-09-01,In Progress,Contour Trench intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+19,7,Check Dam,22.808671,86.193123,2026-07-02,Completed,Check Dam intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+20,7,Contour Trench,22.807995,86.207127,2026-08-02,In Progress,Contour Trench intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+21,7,Percolation Tank,22.809279,86.210198,2026-09-02,Completed,Percolation Tank intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+22,8,Contour Trench,23.342699,85.309265,2026-07-03,In Progress,Contour Trench intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+23,8,Percolation Tank,23.34182,85.31921,2026-08-03,Completed,Percolation Tank intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+24,8,Afforestation,23.353265,85.299672,2026-09-03,Completed,Afforestation intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+25,9,Percolation Tank,22.614106,84.49962,2026-07-04,Completed,Percolation Tank intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+26,9,Afforestation,22.625555,84.512647,2026-08-04,Completed,Afforestation intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+27,9,Field Bunding,22.607399,84.506548,2026-09-04,Planned,Field Bunding intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+28,10,Afforestation,22.11686,84.050767,2026-07-05,Completed,Afforestation intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+29,10,Field Bunding,22.117579,84.044648,2026-08-05,Planned,Field Bunding intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+30,10,Farm Pond,22.10908,84.035758,2026-09-05,Completed,Farm Pond intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+31,11,Field Bunding,21.336816,83.620402,2026-07-06,Planned,Field Bunding intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+32,11,Farm Pond,21.341802,83.61719,2026-08-06,Completed,Farm Pond intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+33,11,Check Dam,21.340036,83.624924,2026-09-06,Completed,Check Dam intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+34,12,Farm Pond,20.718148,83.493381,2026-07-07,Completed,Farm Pond intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+35,12,Check Dam,20.711009,83.481252,2026-08-07,Completed,Check Dam intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO
+36,12,Contour Trench,20.698677,83.484826,2026-09-07,In Progress,Contour Trench intervention monitored through JalDrishti prototype; synthetic demo record.,SYNTHETIC_DEMO

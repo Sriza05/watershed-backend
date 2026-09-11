@@ -1,0 +1,6 @@
+Dataset component,Records,Target,Status
+Watersheds,12,12,Synthetic demo
+Geo-coded image records,36,36,Synthetic metadata
+Interventions,36,36,Synthetic demo
+Satellite analysis records,36,36,Synthetic time series
+Change detection records,24,24,Synthetic demo

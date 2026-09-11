@@ -15,8 +15,18 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 
 @router.get("/")
-def get_images(db: Session = Depends(get_db)):
-    return db.query(models.Image).all()
+def get_images(
+    watershed_id: int = None,
+    db: Session = Depends(get_db)
+):
+    query = db.query(models.Image)
+
+    if watershed_id:
+        query = query.filter(
+            models.Image.watershed_id == watershed_id
+        )
+
+    return query.all()
 
 
 @router.post("/")

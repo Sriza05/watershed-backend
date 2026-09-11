@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database import Base, engine
-from routes import images, watersheds, interventions, analysis, change
+from routes import images, watersheds, interventions, analysis, change, dashboard
 
 Base.metadata.create_all(bind=engine)
 
@@ -14,6 +14,7 @@ app.include_router(watersheds.router)
 app.include_router(interventions.router)
 app.include_router(analysis.router)
 app.include_router(change.router)
+app.include_router(dashboard.router)
 
 @app.get("/")
 def home():
